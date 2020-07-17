@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+    <br>
+    <br>
+    <h2>The current weather on Mars is:</h2>
+    <h3> {{ mars.mars_weather }}</h3>
+  </div>
+
+
+  <br>
+  <br>          
+  <br>
+
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Mars News and Featured image</h2>
+            <h4>{{ mars.news_title }}</h4>
+            <hr>
+            <br>
+            <p><a target="_blank" href= "{{ mars.jpl }}">
+                    <img src= "{{ mars.jpl }}" Align="left" alt="Cloudy Map" width="200" height="200">
+                </a>
+                <h4>{{ mars.news_p }}</h4>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+          <h2>Data</h2>
+          <br>
+          <hr>
+          <br>
+          <p>
+            
+                    
+            
+            
+          </p>
+          <br>
+          <br>
+      </div>
+  </div>
+  <div class="row">
+      <div class="table-responsive">
+          <table border="1" class="dataframe">
+            
+<table border="1" class="dataframe">  <thead>    <tr style="text-align: right;">      <th></th>      <th>0</th>      <th>1</th>    </tr>  </thead>  <tbody>    <tr>      <th>0</th>      <td>Equatorial Diameter:</td>      <td>6,792 km</td>    </tr>    <tr>      <th>1</th>      <td>Polar Diameter:</td>      <td>6,752 km</td>    </tr>    <tr>      <th>2</th>      <td>Mass:</td>      <td>6.39 × 10^23 kg (0.11 Earths)</td>    </tr>    <tr>      <th>3</th>      <td>Moons:</td>      <td>2 (Phobos &amp; Deimos)</td>    </tr>    <tr>      <th>4</th>      <td>Orbit Distance:</td>      <td>227,943,824 km (1.38 AU)</td>    </tr>    <tr>      <th>5</th>      <td>Orbit Period:</td>      <td>687 days (1.9 years)</td>    </tr>    <tr>      <th>6</th>      <td>Surface Temperature:</td>      <td>-87 to -5 °C</td>    </tr>    <tr>      <th>7</th>      <td>First Record:</td>      <td>2nd millennium BC</td>    </tr>    <tr>      <th>8</th>      <td>Recorded By:</td>      <td>Egyptian astronomers</td>    </tr>  </tbody></table>
+            </table>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<h2>Mars Hemispheres</h2>
+
+<br>
+<br>          
+<br>
+
+
+{% for item in mars.hemisphere_image_urls %}
+
+
+
+    <div class="col-12 col-sm-6">
+        <h4>{{ item.title }}</h4>
+        <br>
+        <a href={{ item.url }}>
+            <img src={{ item.url }} Align="left" alt="Cloudy Map">
+        </a>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
